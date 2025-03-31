@@ -18,6 +18,7 @@ CREATE TABLE rutas (
     nombre_ruta VARCHAR(100) NOT NULL,
     descripcion TEXT,
     estado ENUM('Activa', 'Inactiva') DEFAULT 'Activa',
+    duracion_meses INT,
     id_sede INT,
     FOREIGN KEY (id_sede) REFERENCES sedes(id_sede)
 );
