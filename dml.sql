@@ -32,7 +32,10 @@ INSERT INTO trainers (nombres, apellidos, email, telefono, id_sede) VALUES
 ('José', 'Hernández', 'jose.hernandez@campuslands.edu.co', '3001234567', 3),
 ('Miguel', 'Moreno', 'miguel.moreno@campuslands.edu.co', '3003456789', 3),
 ('Alberto', 'Jiménez', 'elena.jimenez@campuslands.edu.co', '3004567890', 3),
-('Francisco', 'García', 'francisco.garcia@campuslands.edu.co', '3005678901', 3);
+('Francisco', 'García', 'francisco.garcia@campuslands.edu.co', '3005678901', 3),
+('Ana', 'López', 'ana.lopez@campuslands.edu.co', '3006789012', 1),
+('Carlos', 'Martínez', 'carlos.martinez@campuslands.edu.co', '3007890123', 2),
+('Laura', 'Pérez', 'laura.perez@campuslands.edu.co', '3008901234', 3); 
 
 -- Insertar Áreas de Entrenamiento
 INSERT INTO areas_entrenamiento (nombre_area, capacidad_maxima, id_sede) VALUES
@@ -110,9 +113,9 @@ INSERT INTO rutas_bases_datos (id_ruta, id_bd) VALUES
 
 -- Insertar Asignaciones Trainer-Ruta
 INSERT INTO asignaciones_trainer_ruta (id_trainer, id_ruta, fecha_inicio) VALUES
-(1, 1, '2024-01-01'),
-(2, 2, '2024-01-01'),
-(3, 3, '2024-01-01'),
+(1, 1), (1, 2), (1, 3) ('2024-01-01'),
+(2, 2,), (2, 5), ('2024-01-01'),
+(3, 3,), (3, 7), (3, 8) ('2024-01-01'),
 (4, 4, '2024-01-01'),
 (5, 5, '2024-02-01'),
 (6, 6, '2024-02-01'),
