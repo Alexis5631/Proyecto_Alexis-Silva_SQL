@@ -20,22 +20,22 @@ INSERT INTO rutas (nombre_ruta, descripcion, duracion_meses, id_sede) VALUES
 ('Desarrollo Full Stack Node.js', 'Ruta completa con .NET',12, 3);
 
 -- Insertar Trainers
-INSERT INTO trainers (nombres, apellidos, email, telefono, id_sede) VALUES
-('Jholver', 'Pardo', 'jholver.pardo@campuslands.edu.co', '3001234567', 1),
-('Pedro', 'González', 'maria.gonzalez@campuslands.edu.co', '3002345678', 1),
-('Juan Carlos', 'Rodríguez', 'carlos.rodriguez@campuslands.edu.co', '3003456789', 1),
-('Adrian', 'Martínez', 'ana.martinez@campuslands.edu.co', '3004567890', 1),
-('Oscar', 'López', 'pedro.lopez@campuslands.edu.co', '3005678901', 2),
-('Diego', 'Ramírez', 'diego.ramirez@campuslands.edu.co', '3007890123', 2),
-('Roberto', 'Flores', 'roberto.flores@campuslands.edu.co', '3009012345', 2),
-('Carmen', 'Ruiz', 'carmen.ruiz@campuslands.edu.co', '3000123456', 2),
-('José', 'Hernández', 'jose.hernandez@campuslands.edu.co', '3001234567', 3),
-('Miguel', 'Moreno', 'miguel.moreno@campuslands.edu.co', '3003456789', 3),
-('Alberto', 'Jiménez', 'elena.jimenez@campuslands.edu.co', '3004567890', 3),
-('Francisco', 'García', 'francisco.garcia@campuslands.edu.co', '3005678901', 3),
-('Ana', 'López', 'ana.lopez@campuslands.edu.co', '3006789012', 1),
-('Carlos', 'Martínez', 'carlos.martinez@campuslands.edu.co', '3007890123', 2),
-('Laura', 'Pérez', 'laura.perez@campuslands.edu.co', '3008901234', 3); 
+INSERT INTO trainers (nombres, apellidos, numero_identificacion, email, telefono, id_sede) VALUES
+('Jholver', 'Pardo', '37878122', 'jholver.pardo@campuslands.edu.co', '3001234567', 1),
+('Pedro', 'González', '92736192', 'maria.gonzalez@campuslands.edu.co', '3002345678', 1),
+('Juan Carlos', 'Rodríguez', '109783634', 'carlos.rodriguez@campuslands.edu.co', '3003456789', 1),
+('Adrian', 'Martínez', '294617635', 'ana.martinez@campuslands.edu.co', '3004567890', 1),
+('Oscar', 'López', '1093763746', 'pedro.lopez@campuslands.edu.co', '3005678901', 2),
+('Diego', 'Ramírez', '109424365', 'diego.ramirez@campuslands.edu.co', '3007890123', 2),
+('Roberto', 'Flores', '37947253', 'roberto.flores@campuslands.edu.co', '3009012345', 2),
+('Carmen', 'Ruiz', '1098074635', 'carmen.ruiz@campuslands.edu.co', '3000123456', 2),
+('José', 'Hernández', '87826342', 'jose.hernandez@campuslands.edu.co', '3001234567', 3),
+('Miguel', 'Moreno', '10757345238', 'miguel.moreno@campuslands.edu.co', '3003456789', 3),
+('Alberto', 'Jiménez', '34743285', 'elena.jimenez@campuslands.edu.co', '3004567890', 3),
+('Francisco', 'García', '109264628', 'francisco.garcia@campuslands.edu.co', '3005678901', 3),
+('Ana', 'López', '28097653', 'ana.lopez@campuslands.edu.co', '3006789012', 1),
+('Carlos', 'Martínez', '1098635474', 'carlos.martinez@campuslands.edu.co', '3007890123', 2),
+('Laura', 'Pérez', '124763534' 'laura.perez@campuslands.edu.co', '3008901234', 3); 
 
 -- Insertar Áreas de Entrenamiento
 INSERT INTO areas_entrenamiento (nombre_area, capacidad_maxima, id_sede) VALUES
@@ -65,8 +65,8 @@ INSERT INTO campers (numero_identificacion, nombres, apellidos, direccion, acudi
 ('1011234567', 'José', 'Hernández', 'Carrera 34 #56-78', 'Laura Hernández', '3001234567', 'Aprobado', 'Bajo', 3),
 ('1012345678', 'Isabel', 'Díaz', 'Avenida 12 #34-56', 'Carlos Díaz', '3002345678', 'Cursando', 'Alto', 2),
 ('1013456789', 'Miguel', 'Moreno', 'Calle 45 #67-89', 'Sofia Moreno', '3003456789', 'Inscrito', 'Bajo', 1),
-('1014567890', 'Elena', 'Jiménez', 'Carrera 78 #90-12', 'Diego Jiménez', '3004567890', 'Cursando', 'Medio', 2),
-('1015678901', 'Francisco', 'García', 'Avenida 56 #78-90', 'María García', '3005678901', 'Aprobado', 'Bajo', 1);
+('1014567890', 'Elena', 'Jiménez', 'Carrera 78 #90-12', 'Diego Jiménez', '3004567890', 'Retirado', 'Medio', 2),
+('1015678901', 'Francisco', 'García', 'Avenida 56 #78-90', 'María García', '3005678901', 'Expulsado', 'Bajo', 1);
 
 -- Insertar Módulos
 INSERT INTO modulos (id_ruta, nombre_modulo, descripcion, orden) VALUES
@@ -113,9 +113,9 @@ INSERT INTO rutas_bases_datos (id_ruta, id_bd) VALUES
 
 -- Insertar Asignaciones Trainer-Ruta
 INSERT INTO asignaciones_trainer_ruta (id_trainer, id_ruta, fecha_inicio) VALUES
-(1, 1), (1, 2), (1, 3) ('2024-01-01'),
-(2, 2,), (2, 5), ('2024-01-01'),
-(3, 3,), (3, 7), (3, 8) ('2024-01-01'),
+(1, 1, '2024-01-01'),
+(2, 2, '2024-01-01'),
+(3, 3, '2024-01-01'),
 (4, 4, '2024-01-01'),
 (5, 5, '2024-02-01'),
 (6, 6, '2024-02-01'),
@@ -137,9 +137,9 @@ INSERT INTO horarios (id_area, id_trainer, dia_semana, hora_inicio, hora_fin) VA
 (7, 7, 'Jueves', '06:00:00', '09:00:00'),
 (8, 8, 'Jueves', '13:00:00', '17:00:00'),
 (9, 9, 'Viernes', '06:00:00', '09:00:00'),
-(10, 10, 'Viernes', '13:00:00', '17:00:00'),
-(11, 11, 'Lunes', '06:00:00', '09:00:00'),
-(12, 12, 'Martes', '13:00:00', '17:00:00');
+(1, 10, 'Viernes', '13:00:00', '17:00:00'),
+(2, 11, 'Lunes', '06:00:00', '09:00:00'),
+(3, 12, 'Martes', '13:00:00', '17:00:00');
 
 -- Insertar Inscripciones
 INSERT INTO inscripciones (id_camper, id_ruta, fecha_inscripcion) VALUES
@@ -165,10 +165,10 @@ INSERT INTO evaluaciones (id_camper, id_modulo, evaluacion_teorica, evaluacion_p
 (5, 5, 45.00, 50.00, 55.00, 50.00, '2024-01-15', 'Reprobado'),
 (6, 1, 95.00, 90.00, 85.00, 90.00, '2024-01-15', 'Aprobado'),
 (7, 2, 85.00, 80.00, 75.00, 80.00, '2024-02-15', 'Aprobado'),
-(8, 3, 75.00, 70.00, 65.00, 70.00, '2024-02-15', 'Aprobado'),
+(8, 3, 75.00, 50.00, 65.00, 70.00, '2024-02-15', 'Aprobado'),
 (9, 4, 65.00, 60.00, 55.00, 60.00, '2024-02-15', 'Aprobado'),
 (10, 5, 55.00, 50.00, 45.00, 50.00, '2024-02-15', 'Reprobado'),
-(11, 1, 90.00, 85.00, 80.00, 85.00, '2024-02-15', 'Aprobado'),
+(11, 1, 90.00, 75.00, 80.00, 85.00, '2024-02-15', 'Aprobado'),
 (12, 2, 80.00, 75.00, 70.00, 75.00, '2024-04-15', 'Aprobado'),
 (13, 3, 70.00, 65.00, 60.00, 65.00, '2024-04-15', 'Aprobado'),
 (14, 4, 60.00, 55.00, 50.00, 55.00, '2024-04-15', 'Reprobado'),
@@ -185,9 +185,9 @@ INSERT INTO asistencia (id_camper, id_area, fecha, estado) VALUES
 (7, 7, '2024-01-15', 'Presente'),
 (8, 8, '2024-01-15', 'Ausente'),
 (9, 9, '2024-01-15', 'Presente'),
-(10, 10, '2024-01-15', 'Justificado'),
-(11, 11, '2024-01-15', 'Presente'),
-(12, 12, '2024-01-15', 'Presente');
+(10, 1, '2024-01-15', 'Justificado'),
+(11, 2, '2024-01-15', 'Presente'),
+(12, 3, '2024-01-15', 'Presente');
 
 -- Insertar Teléfonos de Campers
 INSERT INTO telefonos_campers (id_camper, numero_telefono, tipo_telefono) VALUES
@@ -223,7 +223,7 @@ INSERT INTO historial_cambios_estado (id_camper, estado_anterior, estado_nuevo, 
 (12, 'Inscrito', 'Cursando', 'Inicio de clases'),
 (13, 'Cursando', 'Aprobado', 'Aprobación de módulo'),
 (14, 'Cursando', 'Expulsado', 'Bajo rendimiento académico y múltiples inasistencias'),
-(15, 'Inscrito', 'Retirado', '2024-01-20', 'Decisión personal - Cambio de carrera');
+(15, 'Inscrito', 'Retirado', 'Decisión personal - Cambio de carrera');
 
 -- Insertar Egresados
 INSERT INTO egresados (id_camper, fecha_graduacion, promedio_final, ruta_completada) VALUES
@@ -323,24 +323,24 @@ INSERT INTO asignaciones_areas (id_area, id_ruta, fecha_inicio) VALUES
 (7, 7, '2024-07-01'),
 (8, 8, '2024-08-01'),
 (9, 9, '2024-09-01'),
-(10, 10, '2024-10-01'),
-(11, 11, '2024-11-01'),
-(12, 12, '2024-12-01');
+(1, 10, '2024-10-01'),
+(2, 11, '2024-11-01'),
+(3, 12, '2024-12-01');
 
 -- Insertar Historial de Horarios
 INSERT INTO historial_horarios (id_trainer, id_area, dia_semana, hora_inicio, hora_fin, fecha_inicio, motivo_cambio) VALUES
-(1, 1, 'Lunes', '08:00:00', '12:00:00', '2024-01-15', 'Cambio de horario regular'),
-(2, 2, 'Martes', '13:00:00', '17:00:00', '2024-01-18', 'Cambio de horario regular'),
-(3, 3, 'Miércoles', '08:00:00', '12:00:00', '2024-02-15', 'Cambio de horario regular'),
-(4, 4, 'Jueves', '13:00:00', '17:00:00', '2024-02-18', 'Cambio de horario regular'),
-(5, 5, 'Viernes', '08:00:00', '12:00:00', '2024-03-15', 'Cambio de horario regular'),
-(6, 6, 'Lunes', '08:00:00', '12:00:00', '2024-03-18', 'Cambio de horario regular'),
-(7, 7, 'Martes', '13:00:00', '17:00:00', '2024-04-15', 'Cambio de horario regular'),
-(8, 8, 'Miércoles', '08:00:00', '12:00:00', '2024-04-18', 'Cambio de horario regular'),
-(9, 9, 'Jueves', '13:00:00', '17:00:00', '2024-05-15', 'Cambio de horario regular'),
-(10, 10, 'Viernes', '08:00:00', '12:00:00', '2024-05-18', 'Cambio de horario regular'),
-(11, 11, 'Lunes', '08:00:00', '12:00:00', '2024-06-15', 'Cambio de horario regular'),
-(12, 12, 'Martes', '13:00:00', '17:00:00', '2024-06-18', 'Cambio de horario regular');
+(1, 1, 'Lunes', '06:00:00', '09:00:00', '2024-01-15', 'Cambio de horario regular'),
+(2, 2, 'Martes', '14:00:00', '17:00:00', '2024-01-18', 'Cambio de horario regular'),
+(3, 3, 'Miércoles', '06:00:00', '09:00:00', '2024-02-15', 'Cambio de horario regular'),
+(4, 4, 'Jueves', '14:00:00', '17:00:00', '2024-02-18', 'Cambio de horario regular'),
+(5, 5, 'Viernes', '14:00:00', '17:00:00', '2024-03-15', 'Cambio de horario regular'),
+(6, 6, 'Lunes', '14:00:00', '17:00:00', '2024-03-18', 'Cambio de horario regular'),
+(7, 7, 'Martes', '06:00:00', '09:00:00', '2024-04-15', 'Cambio de horario regular'),
+(8, 8, 'Miércoles', '06:00:00', '09:00:00', '2024-04-18', 'Cambio de horario regular'),
+(9, 9, 'Jueves', '14:00:00', '17:00:00', '2024-05-15', 'Cambio de horario regular'),
+(10, 1, 'Viernes', '06:00:00', '09:00:00', '2024-05-18', 'Cambio de horario regular'),
+(11, 2, 'Lunes', '06:00:00', '09:00:00', '2024-06-15', 'Cambio de horario regular'),
+(12, 3, 'Martes', '14:00:00', '17:00:00', '2024-06-18', 'Cambio de horario regular');
 
 -- Insertar Estadísticas de Rendimiento
 INSERT INTO estadisticas_rendimiento (id_ruta, id_modulo, fecha, promedio_teorico, promedio_practico, promedio_quizzes, promedio_final, tasa_aprobacion) VALUES
@@ -365,20 +365,20 @@ INSERT INTO sesiones (id_modulo, id_trainer, id_area, fecha, hora_inicio, hora_f
 (4, 4, 4, '2024-02-19', '13:00:00', '17:00:00', 'Node.js Básico', 'Introducción a Node.js', 'Programada'),
 (5, 5, 5, '2024-02-24', '08:00:00', '12:00:00', 'Bases de Datos SQL', 'Conceptos de bases de datos SQL', 'Programada');
 
--- Insertar Asistencia por Sesión (usando los IDs correctos de sesiones)
+-- Insertar Asistencia por Sesión
 INSERT INTO asistencia_sesiones (id_sesion, id_camper, fecha, estado, hora_llegada) VALUES
-(13, 1, '2024-01-15', 'Presente', '07:55:00'),
-(13, 2, '2024-01-15', 'Presente', '07:50:00'),
-(13, 3, '2024-01-15', 'Tardanza', '08:15:00'),
-(13, 4, '2024-01-15', 'Ausente', NULL),
-(13, 5, '2024-01-15', 'Justificado', NULL),
-(14, 6, '2024-01-17', 'Presente', '12:55:00'),
-(14, 7, '2024-01-17', 'Presente', '12:50:00'),
-(14, 8, '2024-01-17', 'Tardanza', '13:10:00'),
-(14, 9, '2024-01-17', 'Ausente', NULL),
-(14, 10, '2024-01-17', 'Justificado', NULL),
-(15, 11, '2024-02-18', 'Presente', '07:55:00'),
-(15, 12, '2024-02-18', 'Presente', '07:50:00'),
-(15, 13, '2024-02-18', 'Tardanza', '08:20:00'),
-(15, 14, '2024-02-18', 'Ausente', NULL),
-(15, 15, '2024-02-18', 'Justificado', NULL);
+(1, 1, '2024-01-15', 'Presente', '07:55:00'),
+(2, 2, '2024-01-15', 'Presente', '07:50:00'),
+(3, 3, '2024-01-15', 'Tardanza', '08:15:00'),
+(4, 4, '2024-01-15', 'Ausente', NULL),
+(5, 5, '2024-01-15', 'Justificado', NULL),
+(1, 6, '2024-01-17', 'Presente', '12:55:00'),
+(2, 7, '2024-01-17', 'Presente', '12:50:00'),
+(3, 8, '2024-01-17', 'Tardanza', '13:10:00'),
+(4, 9, '2024-01-17', 'Ausente', NULL),
+(5, 10, '2024-01-17', 'Justificado', NULL),
+(1, 11, '2024-02-18', 'Presente', '07:55:00'),
+(2, 12, '2024-02-18', 'Presente', '07:50:00'),
+(3, 13, '2024-02-18', 'Tardanza', '08:20:00'),
+(4, 14, '2024-02-18', 'Ausente', NULL),
+(5, 15, '2024-02-18', 'Justificado', NULL);

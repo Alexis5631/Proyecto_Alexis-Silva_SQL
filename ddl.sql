@@ -28,6 +28,7 @@ CREATE TABLE trainers (
     id_trainer INT PRIMARY KEY AUTO_INCREMENT,
     nombres VARCHAR(50) NOT NULL,
     apellidos VARCHAR(50) NOT NULL,
+    numero_identificacion VARCHAR(20) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     telefono VARCHAR(20),
     estado ENUM('Activo', 'Inactivo') DEFAULT 'Activo',
@@ -112,17 +113,6 @@ CREATE TABLE rutas_bases_datos (
     FOREIGN KEY (id_bd) REFERENCES bases_datos(id_bd)
 );
 
--- Tabla de Asignaciones Trainer-Ruta
-CREATE TABLE asignaciones_trainer_ruta (
-    id_asignacion INT PRIMARY KEY AUTO_INCREMENT,
-    id_trainer INT,
-    id_ruta INT,
-    fecha_inicio DATE NOT NULL,
-    fecha_fin DATE,
-    FOREIGN KEY (id_trainer) REFERENCES trainers(id_trainer),
-    FOREIGN KEY (id_ruta) REFERENCES rutas(id_ruta)
-);
-
 -- Tabla de Horarios
 CREATE TABLE horarios (
     id_horario INT PRIMARY KEY AUTO_INCREMENT,
@@ -133,6 +123,19 @@ CREATE TABLE horarios (
     hora_fin TIME NOT NULL,
     FOREIGN KEY (id_area) REFERENCES areas_entrenamiento(id_area),
     FOREIGN KEY (id_trainer) REFERENCES trainers(id_trainer)
+);
+
+-- Tabla de Asignaciones Trainer-Ruta
+CREATE TABLE asignaciones_trainer_ruta (
+    id_asignacion INT PRIMARY KEY AUTO_INCREMENT,
+    id_trainer INT,
+    id_ruta INT,
+    fecha_inicio DATE NOT NULL,
+    fecha_fin DATE,
+    id_horario INT,
+    FOREIGN KEY (id_horario) REFERENCES horarios(id_horario),
+    FOREIGN KEY (id_trainer) REFERENCES trainers(id_trainer),
+    FOREIGN KEY (id_ruta) REFERENCES rutas(id_ruta)
 );
 
 -- Tabla de Inscripciones
