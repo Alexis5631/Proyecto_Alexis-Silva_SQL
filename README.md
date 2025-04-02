@@ -64,7 +64,7 @@ USE campuslands_ERP;
 
 ## Estructura del Proyecto
 
-- **/inserts**: Contiene las tablasde la base de datos.
+- **/tablas**: Contiene las tablas de la base de datos.
 - [DQL Select](ddl.sql)
 - **/inserts**: Contiene los scripts de inserción de datos iniciales.
 - [DQL Select](dml.sql)
