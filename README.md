@@ -64,12 +64,12 @@ USE campuslands_ERP;
 
 ## Estructura del Proyecto
 
-- **/tablas**: Contiene las tablas de la base de datos.
-- [DQL Select](ddl.sql)
-- **/inserts**: Contiene los scripts de inserción de datos iniciales.
-- [DQL Select](dml.sql)
 - **/diagrama**: Contiene el diagrama.
-- [DQL Select](Diagrama.png)
+- [DQL Select](Diagrama.png): Diagrama
+- **/tablas**: Contiene las tablas de la base de datos.
+- [DQL Select](ddl.sql): Tablas
+- **/inserts**: Contiene los scripts de inserción de datos iniciales.
+- [DQL Select](dml.sql): Insert
 - **/consultas**: Contiene las consultas SQL utilizadas en el proyecto.
 - [DQL Select](dql_select.sql): Consultas de selección de datos.
 - **/triggers**: Contiene los triggers SQL para la gestión de eventos en la base de datos.
